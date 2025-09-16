@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership - Old Mutare UMYF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --navy: #003366;
+            --red: #CC0033;
+            --white: #FFFFFF;
+            --black: #333333;
+            --light-blue: #f0f8ff;
+            --gray: #f5f5f5;
+        }
+
+        body {
+            color: var(--black);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--navy);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            color: var(--white);
+            font-size: 1.8rem;
+            margin-left: 10px;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            background-color: var(--red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem;
+        }
+
+        nav ul li a:hover {
+            color: var(--red);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('https://images.unsplash.com/photo-1511376868136-742c0de8c9a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .breadcrumb li {
+            margin: 0 0.5rem;
+        }
+
+        .breadcrumb li a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .breadcrumb li::after {
+            content: ">";
+            margin-left: 1rem;
+            color: var(--white);
+        }
+
+        .breadcrumb li:last-child::after {
+            content: "";
+        }
+
+        /* Leadership Section */
+        .leader-img {
+    height: 280px;
+    background-color: var(--light-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.leader-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+        .leadership {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--navy);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--red);
+            margin: 0.5rem auto;
+        }
+
+        .leadership-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .leadership-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+
+       .leader-card {
+    flex: 0 0 calc(50% - 2rem); /* Two cards per row */
+    max-width: calc(50% - 2rem);
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+/* For the second row with three cards */
+.leader-card:nth-child(n+3) {
+    flex: 0 0 calc(33.333% - 2rem); /* Three cards per row */
+    max-width: calc(33.333% - 2rem);
+}
+
+@media (max-width: 768px) {
+    .leader-card,
+    .leader-card:nth-child(n+3) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+        .leader-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .leader-img {
+            height: 280px;
+            background-color: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .leader-img .photo-placeholder {
+            text-align: center;
+        }
+
+        .leader-content {
+            padding: 1.5rem;
+        }
+
+        .leader-name {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .leader-role {
+            color: var(--red);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .leader-contact {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .contact-info a {
+            color: var(--navy);
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--red);
+        }
+
+        /* Group Headers */
+        .group-header {
+            text-align: center;
+            margin: 3rem 0 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--navy);
+        }
+
+        .group-header h3 {
+            color: var(--navy);
+            font-size: 1.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-icons {
+            margin: 1rem 0;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--red);
+        }
+
+        .back-to-main {
+            margin-top: 1rem;
+            display: inline-block;
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--white);
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .back-to-main:hover {
+            background-color: var(--white);
+            color: var(--navy);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .breadcrumb {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+           <div class="logo">
+            <img src="https://tse4.mm.bing.net/th/id/OIP.Dr__UrNtlz4wK-Nb7LDG7wHaHV?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Old Mutare UMYF Logo" class="logo-img">
+            <h1>Old Mutare UMYF</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="umyfmain.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#connect">Connect</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#leadership" style="color: var(--red);">Leadership</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>Our Leadership Team</h2>
+            <ul class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li>Leadership</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="leadership">
+        <div class="container">
+            <h2 class="section-title">Meet Our Leaders</h2>
+            <div class="leadership-intro">
+                <p>Our dedicated leadership team works tirelessly to guide the Old Mutare United Methodist Youth Fellowship. Get to know the passionate individuals who help our youth grow in faith, service, and fellowship.</p>
+            </div>
+            
+            <!-- UMYF Leadership Section -->
+            <div class="group-header">
+                <h3>UMYF Leadership</h3>
+            </div>
+            
+            <div class="leadership-grid">
+              <div class="leadership-grid">
+    <!-- Leader 7 - President -->
+    <div class="leader-card">
+        <div class="leader-img">
+            <div class="photo-placeholder">
+                <img src="C:\Users\DELL\Desktop\Vimbai\Pictures\vie.JPEG" alt="Vimbai Mawoyo - President">
+            </div>
+        </div>
+        <div class="leader-content">
+            <h3 class="leader-name">Vimbai Mawoyo</h3>
+            <p class="leader-role">UMYF President</p>
+            <p>Leading the youth group and organizing activities and events.</p>
+            <div class="leader-contact">
+                <div class="contact-info">
+                    <a href="vimbaimawoyoj@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+263780194557"><i class="fas fa-phone"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Leader 8 - Vice President -->
+<div class="leader-card">
+    <div class="leader-img">
+        <img src="C:\Users\DELL\Desktop\HTML\UMYF website\Ane.jpg" alt="Anesu Mushiri - Vice President">
+    </div>
+    <div class="leader-content">
+        <h3 class="leader-name">Anesu Mushiri</h3>
+        <p class="leader-role">Vice President</p>
+        <p>Assisting the president and coordinating community service projects.</p>
+        <div class="leader-contact">
+            <div class="contact-info">
+                <a href="tel:+260967383150"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <!-- Leader 9 - Secretary -->
+    <div class="leader-card">
+        <div class="leader-img">
+            <div class="photo-placeholder">
+                <i class="fas fa-user fa-4x"></i>
+                <p>Profile Photo</p>
+            </div>
+        </div>
+        <div class="leader-content">
+            <h3 class="leader-name">Precious Chipo</h3>
+            <p class="leader-role">Secretary</p>
+            <p>Keeping records and managing communications for the group and leading the documentation of meetings and correspondence</p>
+            <div class="leader-contact">
+                <div class="contact-info">
+                    <a href=" @gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+2637"><i class="fas fa-phone"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Leader 10 - Vice Secretary -->
+    <div class="leader-card">
+        <div class="leader-img">
+            <div class="photo-placeholder">
+                <i class="fas fa-user fa-4x"></i>
+                <p>Profile Photo</p>
+            </div>
+        </div>
+        <div class="leader-content">
+            <h3 class="leader-name">Ngenyasha Tagara</h3>
+            <p class="leader-role">Vice Secretary</p>
+            <p>Assisting the secretary and stepping in as needed.</p>
+        </div>
+    </div>
+    
+    <!-- Leader 11 - Treasurer -->
+    <div class="leader-card">
+        <div class="leader-img">
+            <div class="photo-placeholder">
+                <i class="fas fa-user fa-4x"></i>
+                <p>Profile Photo</p>
+            </div>
+        </div>
+        <div class="leader-content">
+            <h3 class="leader-name">Pardon Tagara</h3>
+            <p class="leader-role">Treasurer</p>
+            <p>Manages and records church's day-to-day finances.</p>
+        </div>
+    </div>
+</div>
+                <!-- Leader 12 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Allen Mudonhi</h3>
+                        <p class="leader-role">Finance Chairperson</p>
+                        <p>Oversees the overall financial strategy and policy of the organization.</p>
+                    </div>
+                </div>
+                <!-- Leader 13 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Rumbi Mandiwanza</h3>
+                        <p class="leader-role">Vice Finance</p>
+                        <p>Supports and substitutes for the treasurer or finance chairperson as needed.</p>
+                    </div>
+                </div>
+                <!-- Leader 14 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Rufaro Jolide</h3>
+                        <p class="leader-role">Recreation Chairperson</p>
+                        <p>Provides overall leadership to the recreation or youth ministry, guiding the planning and execution of recreational events and programs that foster community and participation in the church.</p>
+                    </div>
+                </div>
+                <!-- Leader 15 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Dumisani Chakadonha</h3>
+                        <p class="leader-role">Recreation Member</p>
+                        <p>Assists the chairperson in all their duties, working closely to support leadership and ensure the smooth functioning of the recreation ministry.</p>
+                    </div>
+                </div>
+                <!-- Leader 16 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Panashe Dozva</h3>
+                        <p class="leader-role">Recreation Member</p>
+                        <p>Assists the chairperson in all their duties, working closely to support leadership and ensure the smooth functioning of the recreation ministry.</p>
+                    </div>
+                </div>
+                <!-- Leader 17 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Silas Mudonhi</h3>
+                        <p class="leader-role">Evangelism Chairperson</p>
+                        <p>Leads the church's efforts to spread the gospel, coordinates evangelism activities, trains members in personal evangelism, and promotes outreach.</p>
+                    </div>
+                </div>
+                <!-- Leader 18 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Erengwi Tanyaradzwa</h3>
+                        <p class="leader-role">Evangelism Member</p>
+                        <p>Assists the chairperson in carrying out the evangelism ministry's tasks and projects, helping share leadership responsibilities.</p>
+                    </div>
+                </div>
+                <!-- Leader 19 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Tinotenda Marume</h3>
+                        <p class="leader-role">Evangelism Member</p>
+                        <p>Assists the chairperson in carrying out the evangelism ministry's tasks and projects, helping share leadership responsibilities.</p>
+                    </div>
+                </div>
+                
+                <!-- Leader 20 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Kudakwashe Mawoyo</h3>
+                        <p class="leader-role">Community Service</p>
+                        <p>Leads and represents the community service group, overseeing activities and coordination.</p>
+                    </div>
+                </div>
+                <!-- Leader 21 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Tinashe Nyakuchena</h3>
+                        <p class="leader-role">Community Service Vice</p>
+                        <p>Supports and steps in to fulfill the Chairperson's duties as needed, ensuring smooth operation and collaboration.</p>
+                    </div>
+                </div>
+                <!-- Leader 22 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Bruce Tsakatsa</h3>
+                        <p class="leader-role">World and Friendship</p>
+                        <p>Provides overall leadership and direction for the World and Friendship committee or group, setting goals that promote cultural understanding, global outreach, and building friendships at local and circuit level.</p>
+                    </div>
+                </div>
+                <!-- Leader 23 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Tanyaradzwa Murapa</h3>
+                        <p class="leader-role">World and Friendship Vice</p>
+                        <p>Supports, assists, and stands in for the Chairperson to ensure continuity and effective collaboration.</p>
+                    </div>
+                </div>
+                <!-- Leader 24 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Bepe Munashe</h3>
+                        <p class="leader-role">Projects Chairperson</p>
+                        <p>The project chairperson in a church is responsible for overseeing the planning, organization, and execution of church projects.</p>
+                    </div>
+                </div>
+                 <!-- Leader 25 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Tatenda Chipunza</h3>
+                        <p class="leader-role">Projects Vice</p>
+                        <p>Helps with planning, coordinating activities, and managing team members alongside the Project Leader.</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Pastors Section -->
+            <div class="group-header">
+                <h3>Pastors</h3>
+            </div>
+            
+            <div class="leadership-grid">
+                <!-- Leader 1 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Rev.S Chikove</h3>
+                        <p class="leader-role">Youth Pastor</p>
+                        <p>Providing spiritual guidance and leadership to our youth ministry.</p>
+                        <div class="leader-contact">
+                            <div class="contact-info">
+                                <a href="mailto:tendai@oldmutareumyf.org"><i class="fas fa-envelope"></i></a>
+                                <a href="tel:+263774784709"><i class="fas fa-phone"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leader 2 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Rev.G Gandi</h3>
+                        <p class="leader-role">Youth Pastor</p>
+                        <p>Providing spiritual guidance and leadership to our youth ministry.</p>
+                        <div class="leader-contact">
+                            <div class="contact-info">
+                                <a href="mailto:tendai@oldmutareumyf.org"><i class="fas fa-envelope"></i></a>
+                                <a href="tel:+263774784709"><i class="fas fa-phone"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Advisors Section -->
+            <div class="group-header">
+                <h3>Advisors</h3>
+            </div>
+            
+            <div class="leadership-grid">
+                <!-- Leader 3 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Mrs. T. Murapa</h3>
+                        <p class="leader-role">Mother Advisor</p>
+                        <p>Provides support, guidance and mentorship.</p>
+                    </div>
+                </div>
+                
+                <!-- Leader 4 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Mrs Mawoyo</h3>
+                        <p class="leader-role">Mother Advisor</p>
+                        <p>Provides support, guidance and mentorship.</p>
+                    </div>
+                </div>
+
+                <!-- Leader 5 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Mr Chakadonha</h3>
+                        <p class="leader-role">Father Advisor</p>
+                        <p>Provides support, guidance and mentorship.</p>
+                    </div>
+                </div>
+                
+                <!-- Leader 6 -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Mr Chipunza</h3>
+                        <p class="leader-role">Father Advisor</p>
+                        <p>Providing spiritual guidance and leadership to our youth ministry.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ambassadors Section -->
+            <div class="group-header">
+                <h3>Ambassadors</h3>
+            </div>
+            
+            <div class="leadership-grid">
+                <!-- Leader 26 (Ambassador) -->
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user fa-4x"></i>
+                            <p>Profile Photo</p>
+                        </div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Panashe Mhumho</h3>
+                        <p class="leader-role">Ambassador</p>
+                        <p>The face of Old Mutare in Mutasa Nyanga—bringing energy, connection, and purpose to every corner of our circuit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2025 Old Mutare United Methodist Youth Fellowship. All Rights Reserved.</p>
+            <a href="umyfmain.html" class="back-to-main">Back to Main Site</a>
+        </div>
+    </footer>
+</body>
+</html>
